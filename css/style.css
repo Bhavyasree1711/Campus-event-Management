@@ -199,7 +199,7 @@ body.dark-mode .empty-state {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(79, 70, 229, 0.7) 100%);
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.6) 0%, rgba(79, 70, 229, 0.4) 100%);
     z-index: 0;
 }
 .hero-title {
