@@ -1,0 +1,210 @@
+:root {
+    --primary-color: #4f46e5;
+    --primary-hover: #4338ca;
+    --accent-color: #38bdf8;
+    --bg-light: #f8fafc;
+    --bg-dark: #0f172a;
+    --text-light: #1e293b;
+    --text-dark: #f8fafc;
+    --card-bg-light: #ffffff;
+    --card-bg-dark: #1e293b;
+    --border-light: #e2e8f0;
+    --border-dark: #334155;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-light);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body.dark-mode {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+}
+
+main {
+    flex: 1;
+}
+
+/* Custom Nav Styles */
+.navbar {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+body.dark-mode .navbar {
+    background-color: #1a1d20 !important;
+    border-bottom: 1px solid var(--border-dark);
+}
+body.dark-mode .navbar-brand, 
+body.dark-mode .nav-link {
+    color: var(--text-dark) !important;
+}
+
+/* Cards */
+.card {
+    border-radius: 12px;
+    border: 1px solid var(--border-light);
+    background-color: var(--card-bg-light);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s, border-color 0.3s;
+    overflow: hidden;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+body.dark-mode .card {
+    background-color: var(--card-bg-dark);
+    border-color: var(--border-dark);
+}
+body.dark-mode .card-title,
+body.dark-mode .card-text {
+    color: var(--text-dark);
+}
+
+/* Forms */
+body.dark-mode .form-control,
+body.dark-mode .form-select {
+    background-color: #343a40;
+    border-color: #495057;
+    color: white;
+}
+body.dark-mode .form-control:focus,
+body.dark-mode .form-select:focus {
+    background-color: #3b4248;
+    color: white;
+    border-color: var(--primary-color);
+}
+body.dark-mode .form-label {
+    color: #ced4da;
+}
+
+/* Buttons */
+.btn-animated {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+.btn-animated:active {
+    transform: scale(0.95);
+}
+
+/* Loading Overlay */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+body.dark-mode .loading-overlay {
+    background: rgba(0,0,0,0.8);
+}
+.loading-overlay.d-none {
+    display: none !important;
+}
+
+/* Toasts */
+.toast-container {
+    z-index: 1060;
+}
+
+/* Auth Container */
+.auth-wrapper {
+    min-height: calc(100vh - 140px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.auth-card {
+    width: 100%;
+    max-width: 450px;
+    padding: 2rem;
+    border-radius: 16px;
+}
+
+/* Footer */
+.custom-footer {
+    background-color: #223a54;
+    color: #e2e8f0;
+}
+.custom-footer .footer-contact i {
+    font-size: 1.1rem;
+}
+.custom-footer .form-control::placeholder {
+    color: #cbd5e1;
+}
+.custom-footer .hover-primary {
+    transition: color 0.2s ease;
+}
+.custom-footer .hover-primary:hover {
+    color: var(--accent-color) !important;
+}
+body.dark-mode .custom-footer {
+    background-color: #0f172a;
+}
+
+/* Event Poster */
+.event-poster {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+    background-color: #e9ecef;
+}
+body.dark-mode .event-poster {
+    background-color: #495057;
+}
+
+/* Admin Dashboard Stats */
+.stat-card {
+    border-left: 5px solid var(--primary-color);
+}
+
+/* Empty State */
+.empty-state {
+    padding: 3rem;
+    text-align: center;
+    color: #6c757d;
+}
+body.dark-mode .empty-state {
+    color: #adb5bd;
+}
+
+/* Text Accent */
+.text-accent {
+    color: var(--accent-color);
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    padding: 8rem 0;
+    min-height: 80vh;
+    background: url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1600&q=80') center center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(79, 70, 229, 0.7) 100%);
+    z-index: 0;
+}
+.hero-title {
+    text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.z-index-1 {
+    z-index: 1;
+}
